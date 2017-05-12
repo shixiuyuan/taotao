@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="taotao-common" target="1.8" />
+      <module name="taotao-manager" target="1.8" />
+      <module name="taotao-parent" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
