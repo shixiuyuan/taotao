@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../generatorSqlmapCustom/generatorSqlmapCustom.iml" filepath="$PROJECT_DIR$/../generatorSqlmapCustom/generatorSqlmapCustom.iml" />
       <module fileurl="file://$PROJECT_DIR$/../taotao-common/taotao-common.iml" filepath="$PROJECT_DIR$/../taotao-common/taotao-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/../taotao-manager/taotao-manager.iml" filepath="$PROJECT_DIR$/../taotao-manager/taotao-manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/../taotao-manager/taotao-manager-mapper/taotao-manager-mapper.iml" filepath="$PROJECT_DIR$/../taotao-manager/taotao-manager-mapper/taotao-manager-mapper.iml" />

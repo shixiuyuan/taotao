@@ -1,29 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>taotao-manager</artifactId>
         <groupId>com.taotao</groupId>
+        <artifactId>taotao-manager</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
     <artifactId>taotao-manager-web</artifactId>
     <packaging>war</packaging>
-    <name>taotao-manager-web Maven Webapp</name>
-    <url>http://maven.apache.org</url>
-
+    <!-- 依赖管理 -->
     <dependencies>
-
         <dependency>
             <groupId>com.taotao</groupId>
             <artifactId>taotao-manager-service</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
         </dependency>
         <!-- JSP相关 -->
         <dependency>
@@ -45,10 +35,9 @@
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
         </dependency>
-
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
     </dependencies>
-    <build>
-        <finalName>taotao-manager-web</finalName>
-    </build>
 </project>
