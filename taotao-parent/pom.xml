@@ -29,7 +29,7 @@
         <jstl.version>1.2</jstl.version>
         <servlet-api.version>2.5</servlet-api.version>
         <jsp-api.version>2.0</jsp-api.version>
-        <joda-time.version>2.9.9</joda-time.version> <!--源码的2.5版本好像有问题 -->
+        <joda-time.version>2.5</joda-time.version> <!--源码的2.5版本好像有问题 -->
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <commons-io.version>1.3.2</commons-io.version>
         <commons-net.version>3.3</commons-net.version>
