@@ -3,7 +3,7 @@
 <table cellpadding="5" style="margin-left: 30px" id="itemParamAddTable" class="itemParam">
 	<tr>
 		<td>商品类目:</td>
-		<td><a href="javascript:void(0)" class="easyui-linkbutton selectItemCat">选择类目</a> 
+		<td><a href="javascript:void(0)" class="easyui-linkbutton selectItemCat">选择类目</a>
 			<input type="hidden" name="cid" style="width: 280px;"></input>
 		</td>
 	</tr>
@@ -35,12 +35,12 @@
 		</ul>
 	</li>
 </div>
-<script style="text/javascript">
+<script type="text/javascript">
 	$(function(){
 		TAOTAO.initItemCat({
 			fun:function(node){
 			$(".addGroupTr").hide().find(".param").remove();
-				//  判断选择的目录是否已经添加过规格
+				//  判断选择的类目是否已经添加过规格
 			  $.getJSON("/item/param/query/itemcatid/" + node.id,function(data){
 				  if(data.status == 200 && data.data){
 					  $.messager.alert("提示", "该类目已经添加，请选择其他类目。", undefined, function(){
@@ -92,6 +92,7 @@
 					});					
 				}
 			});
+			console.log(params);
 			var url = "/item/param/save/"+$("#itemParamAddTable [name=cid]").val();
 			$.post(url,{"paramData":JSON.stringify(params)},function(data){
 				if(data.status == 200){
