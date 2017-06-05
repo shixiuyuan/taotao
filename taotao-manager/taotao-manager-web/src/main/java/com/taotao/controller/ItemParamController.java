@@ -1,5 +1,6 @@
 package com.taotao.controller;
 
+import com.taotao.common.pojo.EUDataGridResult;
 import com.taotao.common.utils.TaotaoResult;
 import com.taotao.pojo.TbItemParam;
 import com.taotao.service.ItemParamService;
@@ -40,6 +41,13 @@ public class ItemParamController {
         itemParam.setItemCatId(cid);
         itemParam.setParamData(paramData);
         TaotaoResult result = itemParamService.insertItemParam(itemParam);
+        return result;
+    }
+
+    @RequestMapping("/list")
+    @ResponseBody
+    public EUDataGridResult getItemList(Integer page, Integer rows) {
+        EUDataGridResult result = itemParamService.getItemList(page, rows);
         return result;
     }
 
