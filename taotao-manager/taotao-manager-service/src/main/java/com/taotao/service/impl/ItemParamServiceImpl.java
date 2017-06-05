@@ -33,7 +33,8 @@ public class ItemParamServiceImpl implements ItemParamService{
         TbItemParamExample example = new TbItemParamExample();
         TbItemParamExample.Criteria criteria = example.createCriteria();
         criteria.andItemCatIdEqualTo(cid);
-        List<TbItemParam> list = itemParamMapper.selectByExample(example);
+        //selectByExample和selectByExampleWithBLOBs的区别是少了一个param_data(里面是json数据)
+        List<TbItemParam> list = itemParamMapper.selectByExampleWithBLOBs(example);
         //判断是否查询到结果
         if(list!=null && list.size()>0){
             return TaotaoResult.ok(list.get(0));
