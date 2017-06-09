@@ -13,6 +13,7 @@
         <module>../generatorSqlmapCustom</module>
         <module>../taotao-rest</module>
         <module>../taotao-rest</module>
+        <module>../taotao-portal</module>
     </modules>
 
     <packaging>pom</packaging>
