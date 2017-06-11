@@ -62,7 +62,8 @@ public class ItemParamServiceImpl implements ItemParamService{
         TbItemParamExample example = new TbItemParamExample();
         //分页处理
         PageHelper.startPage(page,rows);
-        List<TbItemParam> list = itemParamMapper.selectByExample(example);
+        //List<TbItemParam> list = itemParamMapper.selectByExample(example);
+        List<TbItemParam> list = itemParamMapper.selectByExampleWithBLOBs(example);
         //创建一个返回值对象
         EUDataGridResult result = new EUDataGridResult();
         result.setRows(list);
@@ -71,6 +72,8 @@ public class ItemParamServiceImpl implements ItemParamService{
         result.setTotal(pageInfo.getTotal());
 
         return result;
+
+
     }
 }
 

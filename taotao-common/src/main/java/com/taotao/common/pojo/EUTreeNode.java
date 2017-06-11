@@ -3,7 +3,7 @@ package com.taotao.common.pojo;
 /**
  * Created by xy on 2017/5/22.
  */
-public class EasyUITreeNode {
+public class EUTreeNode {
 
     private long id;
     private String text;

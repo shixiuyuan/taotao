@@ -1,6 +1,6 @@
 package com.taotao.service.impl;
 
-import com.taotao.common.pojo.EasyUITreeNode;
+import com.taotao.common.pojo.EUTreeNode;
 import com.taotao.mapper.TbItemCatMapper;
 import com.taotao.pojo.TbItemCat;
 import com.taotao.pojo.TbItemCatExample;
@@ -23,7 +23,7 @@ public class ItemCatServiceImpl implements ItemCatService {
     private TbItemCatMapper itemCatMapper;
 
     @Override
-    public List<EasyUITreeNode> getItemCatList(long parentId) {
+    public List<EUTreeNode> getItemCatList(long parentId) {
         //根据parentId查询分类类别
         TbItemCatExample example = new TbItemCatExample();
         //设置查询条件
@@ -32,10 +32,10 @@ public class ItemCatServiceImpl implements ItemCatService {
         //执行查询
         List<TbItemCat> list= itemCatMapper.selectByExample(example);
         //转换成EasyUITreeNode列表
-        List<EasyUITreeNode> resultList = new ArrayList<>();
+        List<EUTreeNode> resultList = new ArrayList<>();
         for(TbItemCat tbItemCat : list){
             //创建一个节点对象
-            EasyUITreeNode node = new EasyUITreeNode();
+            EUTreeNode node = new EUTreeNode();
             node.setId(tbItemCat.getId());
             node.setText(tbItemCat.getName());
             node.setState(tbItemCat.getIsParent()?"closed":"open");

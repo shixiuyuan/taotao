@@ -15,6 +15,7 @@ $(function(){
 		url : '/content/category/list',
 		animate: true,
 		method : "GET",
+        <!-- onContextMenu 点右键打开了一个菜单,把6-11行的内容显示出来-->
 		onContextMenu: function(e,node){
             e.preventDefault();
             $(this).tree('select',node.target);
@@ -23,6 +24,7 @@ $(function(){
                 top: e.pageY
             });
         },
+        <!-- 编辑完成后出发这个事件-->
         onAfterEdit : function(node){
         	var _tree = $(this);
         	if(node.id == 0){
@@ -38,6 +40,7 @@ $(function(){
         			}
         		});
         	}else{
+        	    //重命名
         		$.post("/content/category/update",{id:node.id,name:node.text});
         	}
         }
@@ -46,6 +49,7 @@ $(function(){
 function menuHandler(item){
 	var tree = $("#contentCategory");
 	var node = tree.tree("getSelected");
+	<!-- 如果name等于add,就是添加了-->
 	if(item.name === "add"){
 		tree.tree('append', {
             parent: (node?node.target:null),
@@ -58,11 +62,12 @@ function menuHandler(item){
 		var _node = tree.tree('find',0);
 		tree.tree("select",_node.target).tree('beginEdit',_node.target);
 	}else if(item.name === "rename"){
+	    <!-- 重命名节点,在页面使节点变为可编辑状态 -->
 		tree.tree('beginEdit',node.target);
 	}else if(item.name === "delete"){
 		$.messager.confirm('确认','确定删除名为 '+node.text+' 的分类吗？',function(r){
 			if(r){
-				$.post("/content/category/delete/",{parentId:node.parentId,id:node.id},function(){
+				$.post("/content/category/delete",{id:node.id},function(){
 					tree.tree("remove",node.target);
 				});	
 			}
